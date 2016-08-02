@@ -10,7 +10,7 @@ var shallowClone = Object.assign || require('util')._extend
 
 test('setup', function (t) {
   rimraf.sync(pkg)
-  mkdirp.sync(path.resolve(pkg, 'node_modules'))
+  mkdirp.sync(path.resolve(pkg, 'unity_packages'))
   t.end()
 })
 

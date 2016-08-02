@@ -15,7 +15,7 @@ var isWindows = require('../../lib/utils/is-windows.js')
 var base = resolve(__dirname, basename(__filename, '.js'))
 var fixture = new Tacks(Dir({
   'working-dir': Dir({
-    'node_modules': Dir({}) // so it doesn't try to install into npm's own node_modules
+    'unity_packages': Dir({}) // so it doesn't try to install into npm's own unity_packages
   }),
   'test-module': Dir({
     'package.json': File({
@@ -69,9 +69,9 @@ test('install and link', function (t) {
       if (er) throw er
       t.is(code, 0, 'link succeeded')
       var globalBin = resolve(linkedGlobal, isWindows ? '.' : 'bin', 'linked')
-      var globalModule = resolve(linkedGlobal, isWindows ? '.' : 'lib', 'node_modules', '@test', 'linked')
-      var localBin = resolve(workingDir, 'node_modules', '.bin', 'linked')
-      var localModule = resolve(workingDir, 'node_modules', '@test', 'linked')
+      var globalModule = resolve(linkedGlobal, isWindows ? '.' : 'lib', 'unity_packages', '@test', 'linked')
+      var localBin = resolve(workingDir, 'unity_packages', '.bin', 'linked')
+      var localModule = resolve(workingDir, 'unity_packages', '@test', 'linked')
       try {
         t.ok(fs.statSync(globalBin), 'global bin exists')
         t.is(fs.lstatSync(globalModule).isSymbolicLink(), true, 'global module is link')

@@ -223,7 +223,7 @@ and improved progress bar.
 
 #### BUM SYMLINKS BURN NO MORE
 
-There's been a bug lurking where broken symlinks in your `node_modules`
+There's been a bug lurking where broken symlinks in your `unity_packages`
 folder could cause all manner of mischief, from crashes to empty `npm ls`
 results. The intrepid [@watilde](https://github.com/watilde) tracked this
 down for us.
@@ -843,7 +843,7 @@ to address questions y'all send us. ✌
 * [`df04e05`](https://github.com/npm/npm/commit/df04e05af1f257a1903372e1baf334c0969fbdbd)
   [#10013](https://github.com/npm/npm/issues/10013)
   `read-package-tree@5.1.4`:
-  Fixes an issue where `npm install` would fail if your `node_modules` was
+  Fixes an issue where `npm install` would fail if your `unity_packages` was
   symlinked.
   ([@iarna](https://github.com/iarna))
 * [`584676f`](https://github.com/npm/npm/commit/584676f85eaebcb9d6c4d70d2ad320be8a8d6a74)
@@ -1125,7 +1125,7 @@ Tuesday to learn more about that.
 * [`2ae210c`](https://github.com/npm/npm/commit/2ae210c76ab6fd15fcf15dc1808b01ca0b94fc9e)
   `read-package-json@2.0.4`:
   Fix a crash we discovered while fixing up the Windows test suite where if
-  you had a file in your `node_modules` it would cause a crash on Windows
+  you had a file in your `unity_packages` it would cause a crash on Windows
   (but not MacOS/Linux).
 
   This makes the error code you get on Windows match that from MacOS/Linux
@@ -1249,7 +1249,7 @@ contains invalid JSON. (Yeah, I thought we did that last one before too!)
   includes would be included, for example, the `history` package was always included.
 
   With `npm@3` such extraneously bundled modules would not be ordinarily
-  used, as things in `node_modules` in packages are ignored entirely if the
+  used, as things in `unity_packages` in packages are ignored entirely if the
   package isn't marked as bundling modules.
 
   Because of this `npm@3` behavior, the `files-and-ignores` test failed to catch this as
@@ -1407,7 +1407,7 @@ Well then, don't do that.
 
 * [`fdd6b28`](https://github.com/npm/npm/commit/fdd6b28)
   [#11884](https://github.com/npm/npm/pull/11884)
-  Include `node_modules` in the list of files and directories that npm won't
+  Include `unity_packages` in the list of files and directories that npm won't
   include in packages ordinarily. (Modules listed in `bundledDependencies` and things
   that those modules rely on, ARE included of course.)
   ([@Jameskmonger](https://github.com/Jameskmonger))
@@ -1543,7 +1543,7 @@ bubbling was already going on so there was nearly no cost associated with taking
   Change the self installation test to do its work in `/tmp`.
   Previously this was installing into a temp subdir in `test/tap`, which
   wouldn't catch the case where a module was installed in the local
-  `node_modules` folder but not in dependencies, as node would look up
+  `unity_packages` folder but not in dependencies, as node would look up
   the tree and use the copy from the version of npm being tested.
   ([@iarna](https://github.com/iarna))
 
@@ -2148,7 +2148,7 @@ getting rudimentary git submodule support.
   ([@segrey](https://github.com/segrey))
 * [`61daa6a`](https://github.com/npm/npm/commit/61daa6ae8cbc041d3a0d8a6f8f268b47dd8176eb)
   [#11014](https://github.com/npm/npm/issues/11014)
-  Fix a bug where running `rimraf node_modules/<package>` followed by `npm
+  Fix a bug where running `rimraf unity_packages/<package>` followed by `npm
   rm --save <package>` would fail. `npm` now correctly removes the module
   from your `package.json` even though it doesn't exist on disk.
   ([@davidvgalbraith](https://github.com/davidvgalbraith))
@@ -2162,7 +2162,7 @@ getting rudimentary git submodule support.
   [#10063](https://github.com/npm/npm/issues/10063)
   Fix a bug where `npm` would change the order of array properties in the
   `package.json` files of dependencies.  `npm` adds a bunch of stuff to
-  `package.json` files in your `node_modules` folder for debugging and
+  `package.json` files in your `unity_packages` folder for debugging and
   bookkeeping purposes.  As a part of this process it sorts the object to
   reduce file churn when it does updates.  This fixes a bug where the arrays
   in the object were also getting sorted.  This wasn't a problem for
@@ -2236,7 +2236,7 @@ from those versions break the install.
   ([@ekmartin](https://github.com/ekmartin))
 * [`3109303`](https://github.com/npm/npm/commit/310930395c9bf1577cf085b9742210bfc71bb019)
   [#10043](https://github.com/npm/npm/pull/10043)
-  Warn if you try to use `npm run x` if you don't have a `node_modules` folder, since
+  Warn if you try to use `npm run x` if you don't have a `unity_packages` folder, since
   whatever you're trying to do _probably_ won't work.
   ([@timkrins](https://github.com/timkrins))
 
@@ -2323,12 +2323,12 @@ version of Node.js and now suppress those other warnings.
 
 * [`ea331c8`](https://github.com/npm/npm/commit/ea331c82157c65f7643cd4b49fd24031c84bf601)
   [#10938](https://github.com/npm/npm/issues/10938)
-  When removing a package, sometimes the `node_modules/.bin` wouldn't be
+  When removing a package, sometimes the `unity_packages/.bin` wouldn't be
   cleaned up entirely.  This would result in package folders that contained
-  only a `node_modules/.bin` directory.  In turn, this would result in `npm
+  only a `unity_packages/.bin` directory.  In turn, this would result in `npm
   ls` and other tools complaining about these broken directories.
   To fix this, the `unbuild` step now explicitly deletes the
-  `node_modules/.bin` folder as its final step.
+  `unity_packages/.bin` folder as its final step.
   ([@chrisirhc](https://github.com/chrisirhc))
 * [`00720db`](https://github.com/npm/npm/commit/00720db2c326cf8f968c662444a4575ae8c3020a)
   [#11158](https://github.com/npm/npm/pull/11158)
@@ -2626,7 +2626,7 @@ destination and so `c@1.0.2` was being removed.
 
 * [`f4385d8`](https://github.com/npm/npm/commit/f4385d8e7678349e75c80fae8a1f8f366f197937)
   [#10655](https://github.com/npm/npm/pull/10655)
-  Preserve destination `node_modules` when moving.
+  Preserve destination `unity_packages` when moving.
   ([@iarna](https://github.com/iarna))
 
 There was also a bug with `remove` where it was pruning the entire tree
@@ -2903,10 +2903,10 @@ Hey, you found the feature we added!
   prior to `1.4` can still install them. This eliminates all automatic
   deduping.
 
-  Second, `--global-style` which will install modules in your `node_modules`
+  Second, `--global-style` which will install modules in your `unity_packages`
   folder with the same layout as global modules.  Only your direct
-  dependencies will show in `node_modules` and everything they depend on
-  will be flattened in their `node_modules` folders.  This obviously will
+  dependencies will show in `unity_packages` and everything they depend on
+  will be flattened in their `unity_packages` folders.  This obviously will
   elminate some deduping.
   ([@iarna](https://github.com/iarna))
 
@@ -3491,7 +3491,7 @@ become `latest` and this version (v3.3.4) will become `next`!!
 #### CRUFT FOR THE CRUFT GODS
 
 What I call "cruft", by which I mean, files sitting around in
-your `node_modules` folder, will no longer produce warnings in
+your `unity_packages` folder, will no longer produce warnings in
 `npm ls` nor during `npm install`. This brings `npm@3`'s behavior
 in line with `npm@2`.
 
@@ -4345,12 +4345,12 @@ or frontline continuous deployment just yet.
     ([@iarna](https://github.com/iarna))
   * [`edd7448`](https://github.com/npm/npm/commit/edd7448)
     `read-package-tree@5.0.0`: This update makes read-package-tree not explode
-    when there's bad data in your node_modules folder. `npm@2` silently
+    when there's bad data in your unity_packages folder. `npm@2` silently
     ignores this sort of thing.
     ([@iarna](https://github.com/iarna))
   * [`0bb08c8`](https://github.com/npm/npm/commit/0bb08c8)
     [#8778](https://github.com/npm/npm/pull/8778)
-    RELATEDLY, we now show any errors from your node_modules folder after
+    RELATEDLY, we now show any errors from your unity_packages folder after
     your installation completes as warnings. We're also reporting these in
     `npm ls` now.
     ([@iarna](https://github.com/iarna))
@@ -4552,7 +4552,7 @@ requires the module you'll see it listed once for each thing requiring it.
 
 Your dependencies will now be installed *maximally flat*.  Insofar as is
 possible, all of your dependencies, and their dependencies, and THEIR
-dependencies will be installed in your project's `node_modules` folder with no
+dependencies will be installed in your project's `unity_packages` folder with no
 nesting.  You'll only see modules nested underneath one another when two (or
 more) modules have conflicting dependencies.
 
@@ -4616,7 +4616,7 @@ second time (with `npm-shrinkwrap.json`).
 * [#4944](https://github.com/npm/npm/issues/4944)
   ([#5161](https://github.com/npm/npm/issues/5161)
   [#5448](https://github.com/npm/npm/issues/5448))
-  Third, because `node_modules` folders are now deduped and flat,
+  Third, because `unity_packages` folders are now deduped and flat,
   shrinkwrap has to also be smart enough to handle this.
 
 And finally, enjoy this shrinkwrap bug fix:
@@ -4653,7 +4653,7 @@ release, and very much worth checking out:
 * [#3505](https://github.com/npm/npm/issues/3505)
   `npm --dry-run`: You can now ask that npm only report what it _would have
   done_ with the new `--dry-run` flag. This can be passed to any of the
-  commands that change your `node_modules` folder: `install`, `uninstall`,
+  commands that change your `unity_packages` folder: `install`, `uninstall`,
   `update` and `dedupe`.
 * [`81b46fb`](https://github.com/npm/npm/commit/81b46fb)
   npm now knows the correct URLs for `npm bugs` and `npm repo` for

@@ -9,8 +9,8 @@ var rimraf = require('rimraf')
 var common = require('../common-tap')
 
 var pkg = path.resolve(__dirname, path.basename(__filename, '.js'))
-var pathModA = path.join(pkg, 'node_modules', 'moduleA')
-var pathModB = path.join(pkg, 'node_modules', 'moduleB')
+var pathModA = path.join(pkg, 'unity_packages', 'moduleA')
+var pathModB = path.join(pkg, 'unity_packages', 'moduleB')
 
 var modA = {
   name: 'moduleA',

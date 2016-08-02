@@ -63,7 +63,7 @@ test('npm-self-install', function (t) {
     if (err) throw err
     t.is(code, 0, 'install went ok')
     t.is(exists(binpath, cmdname), true, 'binary was installed')
-    t.is(exists(globalpath, isWin32 ? '' : 'lib', 'node_modules', 'npm'), true, 'module path exists')
+    t.is(exists(globalpath, isWin32 ? '' : 'lib', 'unity_packages', 'npm'), true, 'module path exists')
     common.npm(['ls', '--json', '--depth=0'], {cwd: basepath, env: env}, lsCheckAndRemove)
   }
   function lsCheckAndRemove (err, code, stdout, stderr) {
@@ -87,7 +87,7 @@ test('npm-self-install', function (t) {
     var installed = JSON.parse(stdout.trim())
     t.ok(!installed.dependencies || installed.dependencies.length === 0, 'nothing left')
     t.is(exists(binpath, cmdname), false, 'binary was removed')
-    t.is(exists(globalpath, 'lib', 'node_modules', 'npm'), false, 'module was entirely removed')
+    t.is(exists(globalpath, 'lib', 'unity_packages', 'npm'), false, 'module was entirely removed')
     t.done()
   }
 })

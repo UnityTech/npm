@@ -10,7 +10,7 @@ var common = require('../common-tap.js')
 
 var pkg = path.resolve(__dirname, 'optional-metadep-rollback-collision')
 var deps = path.resolve(pkg, 'deps')
-var opdep = path.resolve(pkg, 'node_modules', 'opdep')
+var opdep = path.resolve(pkg, 'unity_packages', 'opdep')
 var cache = path.resolve(pkg, 'cache')
 var pidfile = path.resolve(pkg, 'child.pid')
 

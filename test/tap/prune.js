@@ -75,7 +75,7 @@ test('npm install test-package', function (t) {
 })
 
 test('verify installs', function (t) {
-  var dirs = fs.readdirSync(pkg + '/node_modules').sort()
+  var dirs = fs.readdirSync(pkg + '/unity_packages').sort()
   t.same(dirs, [ 'test-package', 'mkdirp', 'underscore' ].sort())
   t.end()
 })
@@ -94,7 +94,7 @@ test('npm prune', function (t) {
 })
 
 test('verify installs', function (t) {
-  var dirs = fs.readdirSync(pkg + '/node_modules').sort()
+  var dirs = fs.readdirSync(pkg + '/unity_packages').sort()
   t.same(dirs, [ 'mkdirp', 'underscore' ])
   t.end()
 })
@@ -113,7 +113,7 @@ test('npm prune', function (t) {
 })
 
 test('verify installs', function (t) {
-  var dirs = fs.readdirSync(pkg + '/node_modules').sort()
+  var dirs = fs.readdirSync(pkg + '/unity_packages').sort()
   t.same(dirs, [ 'underscore' ])
   t.end()
 })

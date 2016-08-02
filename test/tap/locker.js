@@ -13,7 +13,7 @@ var unlock = locker.unlock
 var pkg = path.join(__dirname, '/locker')
 var cache = path.join(pkg, '/cache')
 var tmp = path.join(pkg, '/tmp')
-var nm = path.join(pkg, '/node_modules')
+var nm = path.join(pkg, '/unity_packages')
 
 function cleanup () {
   process.chdir(osenv.tmpdir())

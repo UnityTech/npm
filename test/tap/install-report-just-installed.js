@@ -8,7 +8,7 @@ var common = require('../common-tap.js')
 
 var testdir = path.resolve(__dirname, path.basename(__filename, '.js'))
 var fixture = new Tacks(Dir({
-  node_modules: Dir({
+  unity_packages: Dir({
     a: Dir({
       'package.json': File({
         name: 'a',
@@ -17,7 +17,7 @@ var fixture = new Tacks(Dir({
           b: '1.0.0'
         }
       }),
-      node_modules: Dir({
+      unity_packages: Dir({
         b: Dir({
           'package.json': File({
             name: 'b',

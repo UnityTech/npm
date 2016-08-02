@@ -3276,7 +3276,7 @@ strated contriburting to a new open-saurce porject?
 * [`42c605c`](https://github.com/npm/npm/commit/42c605c7b401f603c32ea70427e1a7666adeafd9)
   Fix typo in `CHANGELOG.md` ([@adrianblynch](https://github.com/adrianblynch))
 * [`c9bd58d`](https://github.com/npm/npm/commit/c9bd58dd637b9c41441023584a13e3818d5db336)
-  Add note about `node_modules/.bin` being added to the path in `npm
+  Add note about `unity_packages/.bin` being added to the path in `npm
   run-script`. ([@quarterto](https://github.com/quarterto))
 * [`903bdd1`](https://github.com/npm/npm/commit/903bdd105b205d6e45d3a2ab83eea8e4071e9aeb)
   Matt Ranney confused the world when he renamed `node-redis` to `redis`. "The
@@ -4437,7 +4437,7 @@ Other changes:
   `npm-package-arg@2.1.2`: support git+file:// URLs for local bare repos
   ([@othiym23](https://github.com/othiym23))
 * [`860a185`](https://github.com/npm/npm/commit/860a185c43646aca84cb93d1c05e2266045c316b)
-  tweak docs to no longer advocate checking in `node_modules`
+  tweak docs to no longer advocate checking in `unity_packages`
   ([@hunterloftis](https://github.com/hunterloftis))
 * [`80e9033`](https://github.com/npm/npm/commit/80e9033c40e373775e35c674faa6c1948661782b)
   add links to nodejs.org downloads to docs

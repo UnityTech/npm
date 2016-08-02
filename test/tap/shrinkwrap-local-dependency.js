@@ -66,7 +66,7 @@ function setup () {
 }
 
 function cleanNodeModules () {
-  rimraf.sync(path.resolve(testdir, 'node_modules'))
+  rimraf.sync(path.resolve(testdir, 'unity_packages'))
 }
 
 function cleanup () {
@@ -111,8 +111,8 @@ test("'npm install' should install local packages from shrinkwrap", function (t)
     t.comment(stdout.trim())
     t.comment(stderr.trim())
     t.equal(code, 0, 'npm exited normally')
-    t.ok(exists(path.join(testdir, 'node_modules', 'mod2')), 'mod2 exists')
-    t.ok(exists(path.join(testdir, 'node_modules', 'mod2', 'node_modules', 'mod1')), 'mod1 exists')
+    t.ok(exists(path.join(testdir, 'unity_packages', 'mod2')), 'mod2 exists')
+    t.ok(exists(path.join(testdir, 'unity_packages', 'mod2', 'unity_packages', 'mod1')), 'mod1 exists')
     t.end()
   })
 })

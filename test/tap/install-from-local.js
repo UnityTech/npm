@@ -71,7 +71,7 @@ test('\'npm install\' should install local packages', function (t) {
       t.notOk(code, 'npm install exited with code 0')
       var dependencyPackageJson = path.resolve(
         pkg,
-        'node_modules/package-local-dependency/package.json'
+        'unity_packages/package-local-dependency/package.json'
       )
       t.ok(
         JSON.parse(fs.readFileSync(dependencyPackageJson, 'utf8')),
@@ -79,7 +79,7 @@ test('\'npm install\' should install local packages', function (t) {
       )
 
       var devDependencyPackageJson = path.resolve(
-        pkg, 'node_modules/package-local-dev-dependency/package.json'
+        pkg, 'unity_packages/package-local-dev-dependency/package.json'
       )
       t.ok(
         JSON.parse(fs.readFileSync(devDependencyPackageJson, 'utf8')),

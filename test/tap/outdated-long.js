@@ -39,8 +39,8 @@ test('it should not throw', function (t) {
 
   var output = []
   var expOut = [
-    path.resolve(pkg, 'node_modules', 'underscore'),
-    path.resolve(pkg, 'node_modules', 'underscore') +
+    path.resolve(pkg, 'unity_packages', 'underscore'),
+    path.resolve(pkg, 'unity_packages', 'underscore') +
       ':underscore@1.3.1' +
       ':underscore@1.3.1' +
       ':underscore@1.5.1' +

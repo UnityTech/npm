@@ -62,7 +62,7 @@ test('npm access public on current package', function (t) {
 test('npm access public when no package passed and no package.json', function (t) {
   // need to simulate a missing package.json
   var missing = path.join(__dirname, 'access-public-missing-guard')
-  mkdirp.sync(path.join(missing, 'node_modules'))
+  mkdirp.sync(path.join(missing, 'unity_packages'))
 
   common.npm([
     'access',
@@ -82,7 +82,7 @@ test('npm access public when no package passed and no package.json', function (t
 test('npm access public when no package passed and invalid package.json', function (t) {
   // need to simulate a missing package.json
   var invalid = path.join(__dirname, 'access-public-invalid-package')
-  mkdirp.sync(path.join(invalid, 'node_modules'))
+  mkdirp.sync(path.join(invalid, 'unity_packages'))
   // it's hard to force `read-package-json` to break w/o ENOENT, but this will do it
   fs.writeFileSync(path.join(invalid, 'package.json'), '{\n')
 
@@ -373,7 +373,7 @@ test('npm access ls-packages on user', function (t) {
 test('npm access ls-packages with no package specified or package.json', function (t) {
   // need to simulate a missing package.json
   var missing = path.join(__dirname, 'access-missing-guard')
-  mkdirp.sync(path.join(missing, 'node_modules'))
+  mkdirp.sync(path.join(missing, 'unity_packages'))
 
   var serverPackages = {
     '@foo/bar': 'write',

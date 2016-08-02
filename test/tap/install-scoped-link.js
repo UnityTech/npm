@@ -14,7 +14,7 @@ var common = require('../common-tap.js')
 
 var pkg = path.join(__dirname, 'install-scoped-link')
 var work = path.join(__dirname, 'install-scoped-link-TEST')
-var modules = path.join(work, 'node_modules')
+var modules = path.join(work, 'unity_packages')
 
 var EXEC_OPTS = { cwd: work }
 

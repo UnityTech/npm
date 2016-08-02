@@ -8,7 +8,7 @@ var common = require('../common-tap.js')
 
 var dir = path.resolve(__dirname, 'bundled-dependencies-no-pkgjson')
 var pkg = path.resolve(dir, 'pkg-with-bundled-dep')
-var dep = path.resolve(pkg, 'node_modules', 'a-bundled-dep')
+var dep = path.resolve(pkg, 'unity_packages', 'a-bundled-dep')
 
 var pkgJson = JSON.stringify({
   name: 'pkg-with-bundled-dep',
@@ -21,7 +21,7 @@ var pkgJson = JSON.stringify({
 }, null, 2) + '\n'
 
 test('setup', function (t) {
-  mkdirp.sync(path.join(dir, 'node_modules'))
+  mkdirp.sync(path.join(dir, 'unity_packages'))
   mkdirp.sync(dep)
 
   fs.writeFileSync(path.resolve(pkg, 'package.json'), pkgJson)

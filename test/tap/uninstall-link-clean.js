@@ -12,7 +12,7 @@ var common = require('../common-tap.js')
 var pkg = path.join(__dirname, 'uninstall-link-clean')
 var dep = path.join(__dirname, 'dep')
 var work = path.join(__dirname, 'uninstall-link-clean-TEST')
-var modules = path.join(work, 'node_modules')
+var modules = path.join(work, 'unity_packages')
 
 var EXEC_OPTS = { cwd: work }
 
@@ -75,7 +75,7 @@ test('installing package with links', function (t) {
         'package installed'
       )
       t.ok(existsSync(path.join(modules, '.bin')), 'binary link directory exists')
-      t.ok(existsSync(path.join(modules, 'package', 'node_modules', '.bin')),
+      t.ok(existsSync(path.join(modules, 'package', 'unity_packages', '.bin')),
         'nested binary link directory exists')
 
       t.end()
@@ -96,7 +96,7 @@ test('uninstalling package with links', function (t) {
 
       t.notOk(existsSync(path.join(modules, 'package')),
         'package directory no longer exists')
-      t.notOk(existsSync(path.join(modules, 'package', 'node_modules', '.bin')),
+      t.notOk(existsSync(path.join(modules, 'package', 'unity_packages', '.bin')),
         'nested binary link directory no longer exists')
 
       t.end()

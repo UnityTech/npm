@@ -13,24 +13,24 @@ mv *.tgz release
 cd release
 tar xzf *.tgz
 
-mkdir node_modules
-mv package node_modules/npm
+mkdir unity_packages
+mv package unity_packages/npm
 
 # make the zip for windows users
-cp node_modules/npm/bin/*.cmd .
+cp unity_packages/npm/bin/*.cmd .
 zipname=npm-$(node ../cli.js -v).zip
-zip -q -9 -r -X "$zipname" *.cmd node_modules
+zip -q -9 -r -X "$zipname" *.cmd unity_packages
 
 # make the tar for node's deps
-cd node_modules
+cd unity_packages
 tarname=npm-$(node ../../cli.js -v).tgz
 tar czf "$tarname" npm
 
 cd ..
-mv "node_modules/$tarname" .
+mv "unity_packages/$tarname" .
 
 rm -rf *.cmd
-rm -rf node_modules
+rm -rf unity_packages
 
 echo "release/$tarname"
 echo "release/$zipname"

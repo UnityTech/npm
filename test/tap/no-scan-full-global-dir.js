@@ -9,15 +9,15 @@ var npm = require('../../lib/npm.js')
 
 var packages = {
   test: {package: {name: 'test'}, path: __dirname, children: ['abc', 'def', 'ghi', 'jkl']},
-  abc: {package: {name: 'abc'}, path: path.join(__dirname, 'node_modules', 'abc')},
-  def: {package: {name: 'def'}, path: path.join(__dirname, 'node_modules', 'def')},
-  ghi: {package: {name: 'ghi'}, path: path.join(__dirname, 'node_modules', 'ghi')},
-  jkl: {package: {name: 'jkl'}, path: path.join(__dirname, 'node_modules', 'jkl')}
+  abc: {package: {name: 'abc'}, path: path.join(__dirname, 'unity_packages', 'abc')},
+  def: {package: {name: 'def'}, path: path.join(__dirname, 'unity_packages', 'def')},
+  ghi: {package: {name: 'ghi'}, path: path.join(__dirname, 'unity_packages', 'ghi')},
+  jkl: {package: {name: 'jkl'}, path: path.join(__dirname, 'unity_packages', 'jkl')}
 }
 var dirs = {}
 var files = {}
 Object.keys(packages).forEach(function (name) {
-  dirs[path.join(packages[name].path, 'node_modules')] = packages[name].children || []
+  dirs[path.join(packages[name].path, 'unity_packages')] = packages[name].children || []
   files[path.join(packages[name].path, 'package.json')] = packages[name].package
 })
 

@@ -42,7 +42,7 @@ test('uninstall --save removes rm-ed package from package.json', function (t) {
       t.ifError(err, 'npm install ran without issue')
       t.notOk(code, 'npm install exited with code 0')
 
-      var p = path.join(pkg, 'node_modules', 'underscore', 'package.json')
+      var p = path.join(pkg, 'unity_packages', 'underscore', 'package.json')
       t.ok(JSON.parse(fs.readFileSync(p)))
 
       var pkgJson = JSON.parse(fs.readFileSync(
@@ -55,7 +55,7 @@ test('uninstall --save removes rm-ed package from package.json', function (t) {
         'got expected save prefix and version of 1.5.1'
       )
 
-      var installed = path.join(pkg, 'node_modules', 'underscore')
+      var installed = path.join(pkg, 'unity_packages', 'underscore')
       rimraf.sync(installed)
 
       common.npm(
@@ -100,7 +100,7 @@ function cleanup () {
 
 function setup () {
   cleanup()
-  mkdirp.sync(path.resolve(pkg, 'node_modules'))
+  mkdirp.sync(path.resolve(pkg, 'unity_packages'))
   fs.writeFileSync(
     path.join(pkg, 'package.json'),
     JSON.stringify(json, null, 2)

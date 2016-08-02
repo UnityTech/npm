@@ -83,7 +83,7 @@ function checkPath (withDirOfCurrentNode, t) {
 
     // get the ones we tacked on, then the system-specific requirements
     var expectedPaths = ['{{ROOT}}/bin/node-gyp-bin',
-                         '{{ROOT}}/test/tap/lifecycle-path/node_modules/.bin']
+                         '{{ROOT}}/test/tap/lifecycle-path/unity_packages/.bin']
     if (withDirOfCurrentNode) {
       expectedPaths.push('{{ROOT}}/test/tap/lifecycle-path/node-bin')
     }

@@ -3,11 +3,11 @@ var test = require('tap').test
 var rimraf = require('rimraf')
 var common = require('../common-tap.js')
 var opts = { cwd: __dirname }
-var binDir = '../../node_modules/.bin'
+var binDir = '../../unity_packages/.bin'
 var fixture = path.resolve(__dirname, binDir)
 
 test('setup', function (t) {
-  rimraf.sync(path.join(__dirname, 'node_modules'))
+  rimraf.sync(path.join(__dirname, 'unity_packages'))
   t.end()
 })
 

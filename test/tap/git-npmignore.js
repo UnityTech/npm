@@ -20,7 +20,7 @@ var fixture = new Tacks(Dir({
         't.js\n'
       ),
       '.gitignore': File(
-        'node_modules/\n'
+        'unity_packages/\n'
       ),
       'a.js': File(
         "console.log('hi');"
@@ -36,7 +36,7 @@ var fixture = new Tacks(Dir({
       })
     })
   }),
-  'node_modules': Dir({
+  'unity_packages': Dir({
   })
 }))
 
@@ -44,7 +44,7 @@ var testdir = resolve(__dirname, path.basename(__filename, '.js'))
 var dep = resolve(testdir, 'deps', 'gitch')
 var packname = 'gitch-1.0.0.tgz'
 var packed = resolve(testdir, packname)
-var modules = resolve(testdir, 'node_modules')
+var modules = resolve(testdir, 'unity_packages')
 var installed = resolve(modules, 'gitch')
 var expected = [
   'a.js',

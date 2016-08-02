@@ -13,11 +13,11 @@ npm-link(1) -- Symlink a package folder
 Package linking is a two-step process.
 
 First, `npm link` in a package folder will create a symlink in the global folder
-`{prefix}/lib/node_modules/<package>` that links to the package where the `npm
+`{prefix}/lib/unity_packages/<package>` that links to the package where the `npm
 link` command was executed. (see `npm-config(7)` for the value of `prefix`).
 
 Next, in some other location, `npm link package-name` will create a
-symbolic link from globally-installed `package-name` to `node_modules/`
+symbolic link from globally-installed `package-name` to `unity_packages/`
 of the current folder.
 
 Note that `package-name` is taken from `package.json`,
@@ -40,7 +40,7 @@ For example:
     npm link redis              # link-install the package
 
 Now, any changes to ~/projects/node-redis will be reflected in
-~/projects/node-bloggy/node_modules/node-redis/. Note that the link should
+~/projects/node-bloggy/unity_packages/node-redis/. Note that the link should
 be to the package name, not the directory name for that package.
 
 You may also shortcut the two steps in one.  For example, to do the
@@ -55,7 +55,7 @@ The second line is the equivalent of doing:
     npm link node-redis
 
 That is, it first creates a global link, and then links the global
-installation target into your project's `node_modules` folder.
+installation target into your project's `unity_packages` folder.
 
 If your linked package is scoped (see `npm-scope(7)`) your link command must
 include that scope, e.g.

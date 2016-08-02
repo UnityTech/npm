@@ -67,7 +67,7 @@ test('install and link', function (t) {
 
           fs.readdir(pkg, function (er, files) {
             t.ifError(er, 'package directory is still there')
-            t.deepEqual(files, ['node_modules'], 'only stub modules dir remains')
+            t.deepEqual(files, ['unity_packages'], 'only stub modules dir remains')
 
             t.end()
           })
@@ -94,7 +94,7 @@ function resolvePath () {
 
 function verify (t, stdout) {
   var binPath = resolvePath(lnk, !isWindows && 'bin', 'linked')
-  var pkgPath = resolvePath(lnk, !isWindows && 'lib', 'node_modules', '@test', 'linked')
+  var pkgPath = resolvePath(lnk, !isWindows && 'lib', 'unity_packages', '@test', 'linked')
   var trgPath = resolvePath(pkgPath, 'index.js')
   t.deepEqual(
     stdout.split('\n').filter(removeBlank),
@@ -117,8 +117,8 @@ function setup () {
   mkdirp.sync(pkg)
   mkdirp.sync(glb)
   fs.symlinkSync(glb, lnk, 'junction')
-  // so it doesn't try to install into npm's own node_modules
-  mkdirp.sync(resolve(pkg, 'node_modules'))
+  // so it doesn't try to install into npm's own unity_packages
+  mkdirp.sync(resolve(pkg, 'unity_packages'))
   mkdirp.sync(dep)
   fs.writeFileSync(resolve(dep, 'package.json'), JSON.stringify(fixture))
   fs.writeFileSync(resolve(dep, 'index.js'), index)

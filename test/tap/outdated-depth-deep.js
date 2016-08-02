@@ -58,7 +58,7 @@ test('outdated depth deep (9999)', function (t) {
     if (err) throw err
     t.is(code, 0, 'install completed successfully')
     t.is('', stderr, 'no error output')
-    var depPath = path.join(pkg, 'node_modules', 'npm-test-peer-deps')
+    var depPath = path.join(pkg, 'unity_packages', 'npm-test-peer-deps')
     common.npm(conf.concat(['install', 'underscore']), {cwd: depPath}, thenRunOutdated)
   }
 

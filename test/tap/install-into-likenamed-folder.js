@@ -17,7 +17,7 @@ var moduleJson = {
 function setup () {
   cleanup()
   mkdirp.sync(moduleDir)
-  mkdirp.sync(path.join(destDir, 'node_modules'))
+  mkdirp.sync(path.join(destDir, 'unity_packages'))
   fs.writeFileSync(path.join(moduleDir, 'package.json'), JSON.stringify(moduleJson))
 }
 

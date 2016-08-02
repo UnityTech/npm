@@ -24,7 +24,7 @@ var fixture = new Tacks(
         'a'
       ]
     }),
-    node_modules: Dir({
+    unity_packages: Dir({
       'a': Dir({
         'package.json': File({
           name: 'a',
@@ -69,7 +69,7 @@ test('bundled-transitive-deps', function (t) {
   }
   function thenCheckContents (err) {
     t.ifError(err, 'unpack successful')
-    var transitivePackedDep = path.join(packed, 'node_modules', 'b')
+    var transitivePackedDep = path.join(packed, 'unity_packages', 'b')
     t.doesNotThrow(transitivePackedDep + ' exists', function () {
       fs.statSync(transitivePackedDep)
     })

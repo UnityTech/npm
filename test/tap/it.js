@@ -11,7 +11,7 @@ var test = require('tap').test
 var common = require('../common-tap')
 
 var pkg = join(__dirname, 'run-script')
-var installed = join(pkg, 'node_modules', 'underscore', 'package.json')
+var installed = join(pkg, 'unity_packages', 'underscore', 'package.json')
 
 var json = {
   name: 'npm-it-test',

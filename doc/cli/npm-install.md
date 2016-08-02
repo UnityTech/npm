@@ -39,7 +39,7 @@ after packing it up into a tarball (b).
 
 * `npm install` (in package directory, no arguments):
 
-    Install the dependencies in the local node_modules folder.
+    Install the dependencies in the local unity_packages folder.
 
     In global mode (ie, with `-g` or `--global` appended to the command),
     it installs the current package context (ie, the current working
@@ -266,10 +266,10 @@ The `-g` or `--global` argument will cause npm to install the package globally
 rather than locally.  See `npm-folders(5)`.
 
 The `--global-style` argument will cause npm to install the package into
-your local `node_modules` folder with the same layout it uses with the
-global `node_modules` folder. Only your direct dependencies will show in
-`node_modules` and everything they depend on will be flattened in their
-`node_modules` folders. This obviously will eliminate some deduping.
+your local `unity_packages` folder with the same layout it uses with the
+global `unity_packages` folder. Only your direct dependencies will show in
+`unity_packages` and everything they depend on will be flattened in their
+`unity_packages` folders. This obviously will eliminate some deduping.
 
 The `--ignore-scripts` argument will cause npm to not execute any 
 scripts defined in the package.json. See `npm-scripts(7)`.
@@ -303,7 +303,7 @@ effect on installation, since that's most of what npm does.
 
 To install a package, npm uses the following algorithm:
 
-    load the existing node_modules tree from disk
+    load the existing unity_packages tree from disk
     clone the tree
     fetch the package.json and assorted metadata and add it to the clone
     walk the clone and add any missing dependencies

@@ -78,25 +78,25 @@ function cleanup () {
   rimraf.sync(work)
 }
 
-var doremove_module = path.join(doremove, 'node_modules', 'example')
-var doremove_example_cmd = path.join(doremove, 'node_modules', '.bin', 'example.cmd')
-var doremove_example_cygwin = path.join(doremove, 'node_modules', '.bin', 'example')
-var dontremove_module = path.join(dontremove, 'node_modules', 'example')
-var dontremove_example_cmd = path.join(dontremove, 'node_modules', '.bin', 'example.cmd')
-var dontremove_example_cygwin = path.join(dontremove, 'node_modules', '.bin', 'example')
+var doremove_module = path.join(doremove, 'unity_packages', 'example')
+var doremove_example_cmd = path.join(doremove, 'unity_packages', '.bin', 'example.cmd')
+var doremove_example_cygwin = path.join(doremove, 'unity_packages', '.bin', 'example')
+var dontremove_module = path.join(dontremove, 'unity_packages', 'example')
+var dontremove_example_cmd = path.join(dontremove, 'unity_packages', '.bin', 'example.cmd')
+var dontremove_example_cygwin = path.join(dontremove, 'unity_packages', '.bin', 'example')
 
 function setup () {
   mkdirp.sync(doremove_module)
-  mkdirp.sync(path.join(doremove, 'node_modules', '.bin'))
-  fs.writeFileSync(path.join(doremove, 'node_modules', 'example', 'package.json'), JSON.stringify(example_json))
-  fs.writeFileSync(path.join(doremove, 'node_modules', 'example', 'example.js'), JSON.stringify(example_bin))
+  mkdirp.sync(path.join(doremove, 'unity_packages', '.bin'))
+  fs.writeFileSync(path.join(doremove, 'unity_packages', 'example', 'package.json'), JSON.stringify(example_json))
+  fs.writeFileSync(path.join(doremove, 'unity_packages', 'example', 'example.js'), JSON.stringify(example_bin))
   fs.writeFileSync(doremove_example_cmd, do_example_cmd)
   fs.writeFileSync(doremove_example_cygwin, do_example_cygwin)
 
   mkdirp.sync(dontremove_module)
-  mkdirp.sync(path.join(dontremove, 'node_modules', '.bin'))
-  fs.writeFileSync(path.join(dontremove, 'node_modules', 'example', 'package.json'), JSON.stringify(example_json))
-  fs.writeFileSync(path.join(dontremove, 'node_modules', 'example', 'example.js'), JSON.stringify(example_bin))
+  mkdirp.sync(path.join(dontremove, 'unity_packages', '.bin'))
+  fs.writeFileSync(path.join(dontremove, 'unity_packages', 'example', 'package.json'), JSON.stringify(example_json))
+  fs.writeFileSync(path.join(dontremove, 'unity_packages', 'example', 'example.js'), JSON.stringify(example_bin))
   fs.writeFileSync(dontremove_example_cmd, dont_example_cmd)
   fs.writeFileSync(dontremove_example_cygwin, dont_example_cygwin)
 }

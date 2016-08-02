@@ -6,7 +6,7 @@ fi
 set -o errexit
 set -o pipefail
 
-if ! [ -x node_modules/.bin/marked-man ]; then
+if ! [ -x unity_packages/.bin/marked-man ]; then
   ps=0
   if [ -f .building_marked-man ]; then
     pid=$(cat .building_marked-man)
@@ -22,7 +22,7 @@ if ! [ -x node_modules/.bin/marked-man ]; then
     echo $$ > .building_marked-man
     sleep 1
     if [ $(cat .building_marked-man) == $$ ]; then
-      make node_modules/.bin/marked-man
+      make unity_packages/.bin/marked-man
       rm .building_marked-man
     else
       while [ -f .building_marked-man ]; do
@@ -32,7 +32,7 @@ if ! [ -x node_modules/.bin/marked-man ]; then
   fi
 fi
 
-if ! [ -x node_modules/.bin/marked ]; then
+if ! [ -x unity_packages/.bin/marked ]; then
   ps=0
   if [ -f .building_marked ]; then
     pid=$(cat .building_marked)
@@ -48,7 +48,7 @@ if ! [ -x node_modules/.bin/marked ]; then
     echo $$ > .building_marked
     sleep 1
     if [ $(cat .building_marked) == $$ ]; then
-      make node_modules/.bin/marked
+      make unity_packages/.bin/marked
       rm .building_marked
     else
       while [ -f .building_marked ]; do
@@ -99,14 +99,14 @@ man_replace_tokens () {
 
 case $dest in
   *.[1357])
-    ./node_modules/.bin/marked-man --roff $src \
+    ./unity_packages/.bin/marked-man --roff $src \
     | man_replace_tokens > $dest
     exit $?
     ;;
   *.html)
     url=${dest/html\//}
     (cat html/dochead.html && \
-     cat $src | ./node_modules/.bin/marked &&
+     cat $src | ./unity_packages/.bin/marked &&
      cat html/docfoot.html)\
     | html_replace_tokens $url \
     > $dest

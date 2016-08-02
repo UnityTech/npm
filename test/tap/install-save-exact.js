@@ -42,7 +42,7 @@ test('\'npm install --save --save-exact\' should install local pkg', function (t
       t.ifError(err, 'npm ran without issue')
       t.notOk(code, 'npm install exited without raising an error code')
 
-      var p = path.resolve(pkg, 'node_modules/underscore/package.json')
+      var p = path.resolve(pkg, 'unity_packages/underscore/package.json')
       t.ok(JSON.parse(fs.readFileSync(p)))
 
       p = path.resolve(pkg, 'package.json')
@@ -75,7 +75,7 @@ test('\'npm install --save-dev --save-exact\' should install local pkg', functio
       t.ifError(err, 'npm ran without issue')
       t.notOk(code, 'npm install exited without raising an error code')
 
-      var p = path.resolve(pkg, 'node_modules/underscore/package.json')
+      var p = path.resolve(pkg, 'unity_packages/underscore/package.json')
       t.ok(JSON.parse(fs.readFileSync(p)))
 
       p = path.resolve(pkg, 'package.json')
@@ -105,7 +105,7 @@ function cleanup () {
 
 function setup () {
   cleanup()
-  mkdirp.sync(path.resolve(pkg, 'node_modules'))
+  mkdirp.sync(path.resolve(pkg, 'unity_packages'))
   fs.writeFileSync(
     path.join(pkg, 'package.json'),
     JSON.stringify(json, null, 2)

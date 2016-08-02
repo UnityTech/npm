@@ -44,7 +44,7 @@ npm!_
 ### Per-project config file
 
 When working locally in a project, a `.npmrc` file in the root of the
-project (ie, a sibling of `node_modules` and `package.json`) will set
+project (ie, a sibling of `unity_packages` and `package.json`) will set
 config values specific to this project.
 
 Note that this only applies to the root of the project that you're

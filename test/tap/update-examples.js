@@ -34,8 +34,8 @@ var INSTALLED = {
   package: DEFAULT_PKG,
   children: [
     {
-      path: '/mock/root/node_modules/dep1',
-      realpath: '/mock/root/node_modules/dep1',
+      path: '/mock/root/unity_packages/dep1',
+      realpath: '/mock/root/unity_packages/dep1',
       isLink: false,
       package: DEP_PKG,
       children: []

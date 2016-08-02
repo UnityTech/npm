@@ -11,7 +11,7 @@ var common = require('../common-tap.js')
 var link = path.join(__dirname, 'link')
 var linkScoped = path.join(__dirname, 'link-scoped')
 var linkInstall = path.join(__dirname, 'link-install')
-var linkInside = path.join(linkInstall, 'node_modules', 'inside')
+var linkInside = path.join(linkInstall, 'unity_packages', 'inside')
 var linkRoot = path.join(__dirname, 'link-root')
 
 var config = 'prefix = ' + linkRoot

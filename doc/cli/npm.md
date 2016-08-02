@@ -55,11 +55,11 @@ In particular, npm has two modes of operation:
 
 * global mode:  
   npm installs packages into the install prefix at
-  `prefix/lib/node_modules` and bins are installed in `prefix/bin`.
+  `prefix/lib/unity_packages` and bins are installed in `prefix/bin`.
 * local mode:  
   npm installs packages into the current project directory, which
   defaults to the current working directory.  Packages are installed to
-  `./node_modules`, and bins are installed to `./node_modules/.bin`.
+  `./unity_packages`, and bins are installed to `./unity_packages/.bin`.
 
 Local mode is the default.  Use `-g` or `--global` on any command to
 operate in global mode instead.

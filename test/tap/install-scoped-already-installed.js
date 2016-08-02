@@ -11,7 +11,7 @@ var common = require('../common-tap')
 
 var root = path.join(__dirname, 'install-scoped-already-installed')
 var pkg = path.join(root, 'package-with-scoped-paths')
-var modules = path.join(pkg, 'node_modules')
+var modules = path.join(pkg, 'unity_packages')
 
 var EXEC_OPTS = { cwd: pkg }
 
@@ -77,11 +77,11 @@ test('installing already installed local scoped package', function (t) {
         'package installed'
       )
       t.ok(
-        contains(installed, 'node_modules/@scoped/package-scoped-dependency'),
+        contains(installed, 'unity_packages/@scoped/package-scoped-dependency'),
         'installed @scoped/package-scoped-dependency'
       )
       t.ok(
-        contains(installed, 'node_modules/package-local-dependency'),
+        contains(installed, 'unity_packages/package-local-dependency'),
         'installed package-local-dependency'
       )
 
@@ -104,11 +104,11 @@ test('installing already installed local scoped package', function (t) {
           )
 
           t.notOk(
-            contains(installed, 'node_modules/@scoped/package-scoped-dependency'),
+            contains(installed, 'unity_packages/@scoped/package-scoped-dependency'),
             'did not reinstall @scoped/package-scoped-dependency'
           )
           t.notOk(
-            contains(installed, 'node_modules/package-local-dependency'),
+            contains(installed, 'unity_packages/package-local-dependency'),
             'did not reinstall package-local-dependency'
           )
           t.end()

@@ -42,7 +42,7 @@ test('install --save with \'^\' save prefix should accept minor updates', functi
       t.ifError(err, 'npm install ran without issue')
       t.notOk(code, 'npm install exited with code 0')
 
-      var p = path.join(pkg, 'node_modules', 'underscore', 'package.json')
+      var p = path.join(pkg, 'unity_packages', 'underscore', 'package.json')
       t.ok(JSON.parse(fs.readFileSync(p)))
 
       var pkgJson = JSON.parse(fs.readFileSync(
@@ -74,7 +74,7 @@ test('install --save-dev with \'^\' save prefix should accept minor dev updates'
       t.ifError(err, 'npm install ran without issue')
       t.notOk(code, 'npm install exited with code 0')
 
-      var p = path.join(pkg, 'node_modules', 'underscore', 'package.json')
+      var p = path.join(pkg, 'unity_packages', 'underscore', 'package.json')
       t.ok(JSON.parse(fs.readFileSync(p)))
 
       var pkgJson = JSON.parse(fs.readFileSync(
@@ -106,7 +106,7 @@ test('install --save with \'~\' save prefix should accept patch updates', functi
       t.ifError(err, 'npm install ran without issue')
       t.notOk(code, 'npm install exited with code 0')
 
-      var p = path.join(pkg, 'node_modules', 'underscore', 'package.json')
+      var p = path.join(pkg, 'unity_packages', 'underscore', 'package.json')
       t.ok(JSON.parse(fs.readFileSync(p)))
 
       var pkgJson = JSON.parse(fs.readFileSync(
@@ -138,7 +138,7 @@ test('install --save-dev with \'~\' save prefix should accept patch updates', fu
       t.ifError(err, 'npm install ran without issue')
       t.notOk(code, 'npm install exited with code 0')
 
-      var p = path.join(pkg, 'node_modules', 'underscore', 'package.json')
+      var p = path.join(pkg, 'unity_packages', 'underscore', 'package.json')
       t.ok(JSON.parse(fs.readFileSync(p)))
 
       var pkgJson = JSON.parse(fs.readFileSync(
@@ -168,7 +168,7 @@ function cleanup () {
 
 function setup () {
   cleanup()
-  mkdirp.sync(path.resolve(pkg, 'node_modules'))
+  mkdirp.sync(path.resolve(pkg, 'unity_packages'))
   fs.writeFileSync(
     path.join(pkg, 'package.json'),
     JSON.stringify(json, null, 2)

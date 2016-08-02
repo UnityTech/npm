@@ -11,7 +11,7 @@ var mr = require('npm-registry-mock')
 
 test('404-parent: if parent exists, specify parent in error message', function (t) {
   setup()
-  rimraf.sync(path.resolve(pkg, 'node_modules'))
+  rimraf.sync(path.resolve(pkg, 'unity_packages'))
   performInstall(function (err) {
     t.ok(err instanceof Error, 'error was returned')
     t.ok(err.parent === '404-parent-test', "error's parent set")

@@ -206,8 +206,8 @@ cd "$TMP" \
   && (ver=`"$node" bin/read-package-json.js package.json version`
       isnpm10=0
       if [ $ret -eq 0 ]; then
-        if [ -d node_modules ]; then
-          if "$node" node_modules/semver/bin/semver -v "$ver" -r "1"
+        if [ -d unity_packages ]; then
+          if "$node" unity_packages/semver/bin/semver -v "$ver" -r "1"
           then
             isnpm10=1
           fi

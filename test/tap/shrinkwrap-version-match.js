@@ -99,7 +99,7 @@ test('bundled', function (t) {
     // that means modC was given its own copy of modB.  Without the patch
     // that went with this test, it wouldn't have been installed because npm
     // would have consider modB@1 to have fulfilled modC's requirement.
-    fs.stat(path.join(testdir, 'node_modules', 'modC', 'node_modules', 'modB', 'B2'), function (missing) {
+    fs.stat(path.join(testdir, 'unity_packages', 'modC', 'unity_packages', 'modB', 'B2'), function (missing) {
       t.ok(!missing, 'modC got the right version of modB')
       t.end()
     })

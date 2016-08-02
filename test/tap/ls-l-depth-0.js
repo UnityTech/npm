@@ -11,7 +11,7 @@ var common = require('../common-tap.js')
 
 var pkg = resolve(__dirname, 'ls-l-depth-0')
 var dep = resolve(pkg, 'deps', 'glock')
-var modules = resolve(pkg, 'node_modules')
+var modules = resolve(pkg, 'unity_packages')
 
 var expected =
   '\n' +

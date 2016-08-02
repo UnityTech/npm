@@ -133,7 +133,7 @@ test('cleanup', function (t) {
 
 function setup () {
   mkdirp.sync(pkg)
-  mkdirp.sync(path.join(pkg, 'node_modules'))
+  mkdirp.sync(path.join(pkg, 'unity_packages'))
   mkdirp.sync(cache)
   fs.writeFileSync(npmrc, configContents, 'ascii')
   process.chdir(pkg)

@@ -100,7 +100,7 @@ This generates `npm-shrinkwrap.json`, which will look something like this:
     }
 
 The shrinkwrap command has locked down the dependencies based on what's
-currently installed in `node_modules`.  The installation behavior is changed to:
+currently installed in `unity_packages`.  The installation behavior is changed to:
 
 1. The module tree described by the shrinkwrap is reproduced. This means
 reproducing the structure described in the file, using the specific files

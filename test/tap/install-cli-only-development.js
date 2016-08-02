@@ -49,12 +49,12 @@ test('\'npm install --only=development\' should only install devDependencies', f
     t.equal(code, 0, 'npm install did not raise error code')
     t.ok(
       JSON.parse(fs.readFileSync(
-        path.resolve(pkg, 'node_modules/dev-dependency/package.json'), 'utf8')
+        path.resolve(pkg, 'unity_packages/dev-dependency/package.json'), 'utf8')
       ),
       'devDependency was installed'
     )
     t.notOk(
-      existsSync(path.resolve(pkg, 'node_modules/dependency/package.json')),
+      existsSync(path.resolve(pkg, 'unity_packages/dependency/package.json')),
       'dependency was NOT installed'
     )
     t.end()
@@ -70,12 +70,12 @@ test('\'npm install --only=development\' should only install devDependencies reg
     t.equal(code, 0, 'npm install did not raise error code')
     t.ok(
       JSON.parse(fs.readFileSync(
-        path.resolve(pkg, 'node_modules/dev-dependency/package.json'), 'utf8')
+        path.resolve(pkg, 'unity_packages/dev-dependency/package.json'), 'utf8')
       ),
       'devDependency was installed'
     )
     t.notOk(
-      existsSync(path.resolve(pkg, 'node_modules/dependency/package.json')),
+      existsSync(path.resolve(pkg, 'unity_packages/dependency/package.json')),
       'dependency was NOT installed'
     )
     t.end()
@@ -101,7 +101,7 @@ function setup () {
     JSON.stringify(devDependency, null, 2)
   )
 
-  mkdirp.sync(path.join(pkg, 'node_modules'))
+  mkdirp.sync(path.join(pkg, 'unity_packages'))
   fs.writeFileSync(
     path.join(pkg, 'package.json'),
     JSON.stringify(json, null, 2)

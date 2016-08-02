@@ -63,7 +63,7 @@ A few things to note:
   uses dist-tags to manage its `latest` and `next` release channels. `npm update`
   will install the _newest_ version, but `npm install npm` (with no semver range)
   will install whatever's tagged as `latest`.
-* `once` is just plain out of date. Reinstalling `node_modules` from scratch or
+* `once` is just plain out of date. Reinstalling `unity_packages` from scratch or
   running `npm update` will bring it up to spec.
 
 ## CONFIGURATION

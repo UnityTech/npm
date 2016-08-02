@@ -6,7 +6,7 @@ var rimraf = require('rimraf')
 var mkdirp = require('mkdirp')
 var basepath = path.resolve(__dirname, path.basename(__filename, '.js'))
 var fixturepath = path.resolve(basepath, 'npm-test-bundled-git')
-var modulepath = path.resolve(basepath, 'node_modules')
+var modulepath = path.resolve(basepath, 'unity_packages')
 var installedpath = path.resolve(modulepath, 'npm-test-bundled-git')
 var Tacks = require('tacks')
 var File = Tacks.File
@@ -71,7 +71,7 @@ test('bundled-git', function (t) {
     if (err) throw err
     t.is(code, 0, 'install went ok')
 
-    var actual = require(path.resolve(installedpath, 'node_modules/glob/node_modules/minimatch/package.json'))
+    var actual = require(path.resolve(installedpath, 'unity_packages/glob/unity_packages/minimatch/package.json'))
     Object.keys(minimatchExpected).forEach(function (key) {
       t.isDeeply(actual[key], minimatchExpected[key], key + ' set to the right value')
     })

@@ -52,7 +52,7 @@ test('has file in submodule', function (t) {
   bootstrap(t)
   npm.commands.install('.', [], function (er) {
     t.ifError(er, 'npm installed via git')
-    var fooPath = resolve('node_modules', 'child', 'subpath', 'foo.txt')
+    var fooPath = resolve('unity_packages', 'child', 'subpath', 'foo.txt')
     fs.stat(fooPath, function (er) {
       t.ifError(er, 'file in submodule exists')
       t.end()

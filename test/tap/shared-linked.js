@@ -23,7 +23,7 @@ var optimist = Dir({
     name: 'optimist',
     version: '0.6.0'
   }),
-  node_modules: Dir({
+  unity_packages: Dir({
     minimist: Dir({
       'package.json': File({
         _shasum: 'd7aa327bcecf518f9106ac6b8f003fa3bcea8566',
@@ -46,7 +46,7 @@ var fixture = new Tacks(
     cache: Dir({}),
     global: Dir({
       lib: Dir({
-        node_modules: Dir({
+        unity_packages: Dir({
           linked1: Symlink('../../../modules/linked1/'),
           linked2: Symlink('../../../modules/linked2/')
         })
@@ -54,9 +54,9 @@ var fixture = new Tacks(
     }),
     modules: Dir({
       bug: Dir({
-        node_modules: Dir({
-          linked1: Symlink('../../../global/lib/node_modules/linked1'),
-          linked2: Symlink('../../../global/lib/node_modules/linked2')
+        unity_packages: Dir({
+          linked1: Symlink('../../../global/lib/unity_packages/linked1'),
+          linked2: Symlink('../../../global/lib/unity_packages/linked2')
         }),
         'package.json': File({
           name: 'bug',
@@ -76,7 +76,7 @@ var fixture = new Tacks(
             optimist: '0.6.0'
           }
         }),
-        node_modules: Dir({
+        unity_packages: Dir({
           optimist: optimist
         })
       }),
@@ -89,8 +89,8 @@ var fixture = new Tacks(
             linked1: '^1.0.0'
           }
         }),
-        node_modules: Dir({
-          linked1: Symlink('../../../global/lib/node_modules/linked1'),
+        unity_packages: Dir({
+          linked1: Symlink('../../../global/lib/unity_packages/linked1'),
           optimist: optimist
         })
       })

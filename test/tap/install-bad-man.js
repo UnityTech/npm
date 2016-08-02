@@ -66,7 +66,7 @@ function setup () {
   cleanup()
   mkdirp.sync(pkg)
   // make sure it installs locally
-  mkdirp.sync(resolve(target, 'node_modules'))
+  mkdirp.sync(resolve(target, 'unity_packages'))
   fs.writeFileSync(
     resolve(pkg, 'package.json'),
     JSON.stringify(json, null, 2) + '\n'

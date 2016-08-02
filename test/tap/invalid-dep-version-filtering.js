@@ -56,7 +56,7 @@ var pkgB = {
 }
 
 function setup () {
-  mkdirp.sync(path.join(testdir, 'node_modules'))
+  mkdirp.sync(path.join(testdir, 'unity_packages'))
 }
 function cleanup () {
   rimraf.sync(testdir)

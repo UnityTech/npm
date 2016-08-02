@@ -74,10 +74,10 @@ uninstall:
 doc: $(mandocs) $(htmldocs)
 
 markedclean:
-	rm -rf node_modules/marked node_modules/.bin/marked .building_marked
+	rm -rf unity_packages/marked unity_packages/.bin/marked .building_marked
 
 marked-manclean:
-	rm -rf node_modules/marked-man node_modules/.bin/marked-man .building_marked-man
+	rm -rf unity_packages/marked-man unity_packages/.bin/marked-man .building_marked-man
 
 docclean: doc-clean
 doc-clean:
@@ -140,14 +140,14 @@ html/doc/misc/%.html: doc/misc/%.md $(html_docdeps)
 	scripts/doc-build.sh $< $@
 
 
-marked: node_modules/.bin/marked
+marked: unity_packages/.bin/marked
 
-node_modules/.bin/marked:
+unity_packages/.bin/marked:
 	node cli.js install marked --no-global
 
-marked-man: node_modules/.bin/marked-man
+marked-man: unity_packages/.bin/marked-man
 
-node_modules/.bin/marked-man:
+unity_packages/.bin/marked-man:
 	node cli.js install marked-man --no-global
 
 doc: man

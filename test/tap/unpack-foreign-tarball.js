@@ -11,7 +11,7 @@ var common = require('../common-tap.js')
 var fixtures = path.resolve(__dirname, '..', 'fixtures')
 
 var pkg = path.resolve(__dirname, 'unpack-foreign-tarball')
-var nm = path.resolve(pkg, 'node_modules')
+var nm = path.resolve(pkg, 'unity_packages')
 var target = path.resolve(nm, 'npm-test-gitignore')
 var cache = path.resolve(pkg, 'cache')
 var tmp = path.resolve(pkg, 'tmp')

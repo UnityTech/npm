@@ -53,7 +53,7 @@ test('setup', function (t) {
     JSON.stringify(devDependency, null, 2)
   )
 
-  mkdirp.sync(path.join(pkg, 'node_modules'))
+  mkdirp.sync(path.join(pkg, 'unity_packages'))
   fs.writeFileSync(
     path.join(pkg, 'package.json'),
     JSON.stringify(json, null, 2)
@@ -69,12 +69,12 @@ test('\'npm install --only=production\' should only install dependencies', funct
     t.equal(code, 0, 'npm install did not raise error code')
     t.ok(
       JSON.parse(fs.readFileSync(
-        path.resolve(pkg, 'node_modules/dependency/package.json'), 'utf8')
+        path.resolve(pkg, 'unity_packages/dependency/package.json'), 'utf8')
       ),
       'dependency was installed'
     )
     t.notOk(
-      existsSync(path.resolve(pkg, 'node_modules/dev-dependency/package.json')),
+      existsSync(path.resolve(pkg, 'unity_packages/dev-dependency/package.json')),
       'devDependency was NOT installed'
     )
     t.end()

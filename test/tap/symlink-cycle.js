@@ -52,10 +52,10 @@ function cleanup () {
 
 function setup () {
   cleanup()
-  mkdirp.sync(path.join(cycle, 'node_modules'))
+  mkdirp.sync(path.join(cycle, 'unity_packages'))
   writeFileSync(
     path.join(cycle, 'package.json'),
     JSON.stringify(cycleJSON, null, 2)
   )
-  fs.symlinkSync(cycle, path.join(cycle, 'node_modules', 'cycle'), 'junction')
+  fs.symlinkSync(cycle, path.join(cycle, 'unity_packages', 'cycle'), 'junction')
 }

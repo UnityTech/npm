@@ -20,7 +20,7 @@ If that doesn't work, or if you require more drastic measures,
 continue reading.
 
 Note that this is only necessary for globally-installed packages.  Local
-installs are completely contained within a project's `node_modules`
+installs are completely contained within a project's `unity_packages`
 folder.  Delete that folder, and everything is gone (unless a package's
 install script is particularly ill-behaved).
 

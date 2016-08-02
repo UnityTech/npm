@@ -6,11 +6,11 @@ var path = require('path')
 test('childPath', function (t) {
   t.is(
     path.resolve(childPath('/path/to', {name: 'abc'})),
-    path.resolve('/path/to/node_modules/abc'),
+    path.resolve('/path/to/unity_packages/abc'),
     'basic use')
   t.is(
     path.resolve(childPath('/path/to', {package: {name: '@zed/abc'}})),
-    path.resolve('/path/to/node_modules/@zed/abc'),
+    path.resolve('/path/to/unity_packages/@zed/abc'),
     'scoped use')
   t.end()
 })

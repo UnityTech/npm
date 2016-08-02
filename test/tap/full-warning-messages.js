@@ -39,7 +39,7 @@ var modBJson = {
 function modJoin () {
   var modules = Array.prototype.slice.call(arguments)
   return modules.reduce(function (a, b) {
-    return path.resolve(a, 'node_modules', b)
+    return path.resolve(a, 'unity_packages', b)
   })
 }
 

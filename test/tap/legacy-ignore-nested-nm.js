@@ -6,7 +6,7 @@ var rimraf = require('rimraf')
 var mkdirp = require('mkdirp')
 var basepath = path.resolve(__dirname, path.basename(__filename, '.js'))
 var fixturepath = path.resolve(basepath, 'npm-test-ignore-nested-nm')
-var modulepath = path.resolve(basepath, 'node_modules')
+var modulepath = path.resolve(basepath, 'unity_packages')
 var installedpath = path.resolve(modulepath, 'npm-test-ignore-nested-nm')
 var fs = require('graceful-fs')
 var Tacks = require('tacks')
@@ -17,7 +17,7 @@ var fileData = 'I WILL NOT BE IGNORED!\n'
 var fixture = new Tacks(
   Dir({
     lib: Dir({
-      node_modules: Dir({
+      unity_packages: Dir({
         foo: File(fileData)
       })
     }),
@@ -36,7 +36,7 @@ test('ignore-nested-nm', function (t) {
   function installCheckAndTest (err, code, stdout, stderr) {
     if (err) throw err
     t.is(code, 0, 'install went ok')
-    var foopath = path.resolve(installedpath, 'lib/node_modules/foo')
+    var foopath = path.resolve(installedpath, 'lib/unity_packages/foo')
     fs.readFile(foopath, function (err, data) {
       t.ifError(err, 'file read successfully')
       t.equal(data.toString(), fileData)

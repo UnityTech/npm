@@ -49,7 +49,7 @@ test('npm cache - install from fork', function (t) {
 
       t.equal(stdout, installed_output)
       var index = fs.readFileSync(
-        path.join(pkg, 'node_modules', 'underscore', 'index.js'),
+        path.join(pkg, 'unity_packages', 'underscore', 'index.js'),
         'utf8'
       )
       t.equal(index, 'console.log("This is the fork");\n\n')
@@ -77,7 +77,7 @@ test('npm cache - install from origin', function (t) {
       t.notOk(stderr, 'Should not get data on stderr: ' + stderr)
       t.equal(stdout, installed_output)
       var index = fs.readFileSync(
-        path.join(pkg, 'node_modules', 'underscore', 'index.js'),
+        path.join(pkg, 'unity_packages', 'underscore', 'index.js'),
         'utf8'
       )
       t.equal(index, 'module.exports = require(\'./underscore\');\n')
@@ -99,6 +99,6 @@ function cleanup () {
 
 function setup () {
   mkdirp.sync(cache)
-  mkdirp.sync(path.join(pkg, 'node_modules'))
+  mkdirp.sync(path.join(pkg, 'unity_packages'))
   process.chdir(pkg)
 }

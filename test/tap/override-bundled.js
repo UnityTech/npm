@@ -12,24 +12,24 @@ var testmod = path.resolve(testdir, 'top-test')
 
 var bundleupdatesrc = path.resolve(testmod, 'bundle-update')
 var bundleupdateNEW = path.resolve(bundleupdatesrc, 'NEW')
-var bundleupdateNEWpostinstall = path.resolve(testdir, 'node_modules', 'top-test', 'node_modules', 'bundle-update', 'NEW')
-var bundleupdatebad = path.resolve(testmod, 'node_modules', 'bundle-update')
+var bundleupdateNEWpostinstall = path.resolve(testdir, 'unity_packages', 'top-test', 'unity_packages', 'bundle-update', 'NEW')
+var bundleupdatebad = path.resolve(testmod, 'unity_packages', 'bundle-update')
 
 var bundlekeepsrc = path.resolve(testmod, 'bundle-keep')
-var bundlekeep = path.resolve(testmod, 'node_modules', 'bundle-keep')
+var bundlekeep = path.resolve(testmod, 'unity_packages', 'bundle-keep')
 var bundlekeepOLD = path.resolve(bundlekeep, 'OLD')
-var bundlekeepOLDpostinstall = path.resolve(testdir, 'node_modules', 'top-test', 'node_modules', 'bundle-keep', 'OLD')
+var bundlekeepOLDpostinstall = path.resolve(testdir, 'unity_packages', 'top-test', 'unity_packages', 'bundle-keep', 'OLD')
 
 var bundledeepsrc = path.resolve(testmod, 'bundle-deep')
-var bundledeep = path.resolve(testmod, 'node_modules', 'bundle-deep')
+var bundledeep = path.resolve(testmod, 'unity_packages', 'bundle-deep')
 var bundledeepOLD = path.resolve(bundledeep, 'OLD')
-var bundledeepOLDpostinstall = path.resolve(testdir, 'node_modules', 'top-test', 'node_modules', 'bundle-deep', 'OLD')
+var bundledeepOLDpostinstall = path.resolve(testdir, 'unity_packages', 'top-test', 'unity_packages', 'bundle-deep', 'OLD')
 
 var bundledeepupdatesrc = path.resolve(testmod, 'bundle-deep-update')
-var bundledeepupdate = path.resolve(bundledeep, 'node_modules', 'bundle-deep-update')
+var bundledeepupdate = path.resolve(bundledeep, 'unity_packages', 'bundle-deep-update')
 var bundledeepupdateNEW = path.resolve(bundledeepupdatesrc, 'NEW')
-var bundledeepupdateNEWpostinstall = path.resolve(testdir, 'node_modules', 'top-test',
-  'node_modules', 'bundle-deep', 'node_modules', 'bundle-deep-update', 'NEW')
+var bundledeepupdateNEWpostinstall = path.resolve(testdir, 'unity_packages', 'top-test',
+  'unity_packages', 'bundle-deep', 'unity_packages', 'bundle-deep-update', 'NEW')
 
 var testjson = {
   dependencies: {'top-test': 'file:top-test/'}

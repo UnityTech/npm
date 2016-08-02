@@ -13,7 +13,7 @@ test('lifecycle: make env correctly', function (t) {
 
 test('lifecycle : accepts wd for package that matches project\'s name', function (t) {
   npm.load({}, function () {
-    var wd = '/opt/my-time/node_modules/time'
+    var wd = '/opt/my-time/unity_packages/time'
     var pkg = {name: 'time'}
 
     t.equal(lifecycle._incorrectWorkingDirectory(wd, pkg), false)
@@ -23,7 +23,7 @@ test('lifecycle : accepts wd for package that matches project\'s name', function
 
 test('lifecycle : accepts wd for package that doesn\'t match project\'s name', function (t) {
   npm.load({}, function () {
-    var wd = '/opt/my-project/node_modules/time'
+    var wd = '/opt/my-project/unity_packages/time'
     var pkg = {name: 'time'}
 
     t.equal(lifecycle._incorrectWorkingDirectory(wd, pkg), false)
@@ -33,7 +33,7 @@ test('lifecycle : accepts wd for package that doesn\'t match project\'s name', f
 
 test('lifecycle : rejects wd for ', function (t) {
   npm.load({}, function () {
-    var wd = '/opt/my-time/node_modules/time/invalid'
+    var wd = '/opt/my-time/unity_packages/time/invalid'
     var pkg = {
       name: 'time'
     }

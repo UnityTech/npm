@@ -11,7 +11,7 @@ var pj = {
   version: '1.2.3'
 }
 
-var dep = path.resolve(pkg, 'node_modules', 'dep')
+var dep = path.resolve(pkg, 'unity_packages', 'dep')
 var deppj = {
   name: 'nested-extraneous-dep',
   version: '1.2.3',
@@ -20,7 +20,7 @@ var deppj = {
   }
 }
 
-var depdep = path.resolve(dep, 'node_modules', 'depdep')
+var depdep = path.resolve(dep, 'unity_packages', 'depdep')
 var depdeppj = {
   name: 'nested-extra-depdep',
   version: '1.2.3'

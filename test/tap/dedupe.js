@@ -75,13 +75,13 @@ test('dedupe finds the common module and moves it up one level', function (t) {
         t.ifError(err, 'successfully deduped against previous install')
         t.notOk(code, 'npm dedupe exited with code')
 
-        t.ok(existsSync(path.join(pkg, 'node_modules', 'minimist')), 'minimist module exists')
+        t.ok(existsSync(path.join(pkg, 'unity_packages', 'minimist')), 'minimist module exists')
         t.notOk(
-          existsSync(path.join(pkg, 'node_modules', 'clean', 'node_modules', 'minimist')),
+          existsSync(path.join(pkg, 'unity_packages', 'clean', 'unity_packages', 'minimist')),
           'no clean/minimist'
         )
         t.notOk(
-          existsSync(path.join(pkg, 'node_modules', 'optimist', 'node_modules', 'minimist')),
+          existsSync(path.join(pkg, 'unity_packages', 'optimist', 'unity_packages', 'minimist')),
           'no optmist/minimist'
         )
         t.end()

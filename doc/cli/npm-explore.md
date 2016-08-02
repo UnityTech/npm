@@ -13,7 +13,7 @@ If a command is specified, then it is run in the subshell, which then
 immediately terminates.
 
 This is particularly handy in the case of git submodules in the
-`node_modules` folder:
+`unity_packages` folder:
 
     npm explore some-dependency -- git pull origin master
 

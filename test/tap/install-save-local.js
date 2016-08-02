@@ -46,7 +46,7 @@ test('\'npm install --save ../local/path\' should save to package.json', functio
       t.notOk(code, 'npm install exited with code 0')
 
       var dependencyPackageJson = path.join(
-        pkg, 'node_modules', 'package-local-dependency', 'package.json'
+        pkg, 'unity_packages', 'package-local-dependency', 'package.json'
       )
       t.ok(JSON.parse(fs.readFileSync(dependencyPackageJson, 'utf8')))
 
@@ -75,7 +75,7 @@ test('\'npm install --save-dev ../local/path\' should save to package.json', fun
       t.notOk(code, 'npm install exited with code 0')
 
       var dependencyPackageJson = path.resolve(
-        pkg, 'node_modules', 'package-local-dev-dependency', 'package.json'
+        pkg, 'unity_packages', 'package-local-dev-dependency', 'package.json'
       )
       t.ok(JSON.parse(fs.readFileSync(dependencyPackageJson, 'utf8')))
 

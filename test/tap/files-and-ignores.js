@@ -353,13 +353,13 @@ test('include default files when missing files spec', function (t) {
       }),
       'index.js': File(''),
       foo: File(''),
-      node_modules: Dir({foo: Dir({bar: File('')})})
+      unity_packages: Dir({foo: Dir({bar: File('')})})
     })
   )
   withFixture(t, fixture, function (done) {
     t.ok(fileExists('index.js'), 'index.js included')
     t.ok(fileExists('foo'), 'foo included')
-    t.notOk(fileExists('node_modules'), 'node_modules not included')
+    t.notOk(fileExists('unity_packages'), 'unity_packages not included')
     done()
   })
 })
@@ -508,7 +508,7 @@ test('unconditional inclusion does not capture modules', function (t) {
         name: 'npm-test-files',
         version: '1.2.5'
       }),
-      'node_modules': Dir({
+      'unity_packages': Dir({
         'readme': Dir({ 'file': File('') }),
         'README': Dir({ 'file': File('') }),
         'licence': Dir({ 'file': File('') }),
@@ -521,14 +521,14 @@ test('unconditional inclusion does not capture modules', function (t) {
     })
   )
   withFixture(t, fixture, function (done) {
-    t.notOk(fileExists('node_modules/readme/file'), 'readme module not included')
-    t.notOk(fileExists('node_modules/README/file'), 'README module not included')
-    t.notOk(fileExists('node_modules/licence/file'), 'licence module not included')
-    t.notOk(fileExists('node_modules/license/file'), 'license module not included')
-    t.notOk(fileExists('node_modules/history/file'), 'history module not included')
-    t.notOk(fileExists('node_modules/History/file'), 'History module not included')
-    t.notOk(fileExists('node_modules/changelog/file'), 'changelog module not included')
-    t.notOk(fileExists('node_modules/ChangeLOG/file'), 'ChangeLOG module not included')
+    t.notOk(fileExists('unity_packages/readme/file'), 'readme module not included')
+    t.notOk(fileExists('unity_packages/README/file'), 'README module not included')
+    t.notOk(fileExists('unity_packages/licence/file'), 'licence module not included')
+    t.notOk(fileExists('unity_packages/license/file'), 'license module not included')
+    t.notOk(fileExists('unity_packages/history/file'), 'history module not included')
+    t.notOk(fileExists('unity_packages/History/file'), 'History module not included')
+    t.notOk(fileExists('unity_packages/changelog/file'), 'changelog module not included')
+    t.notOk(fileExists('unity_packages/ChangeLOG/file'), 'ChangeLOG module not included')
 
     done()
   })

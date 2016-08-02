@@ -12,7 +12,7 @@ var mkdirp = require('mkdirp')
 var root = path.resolve(__dirname, 'ignore-install-link')
 var pkg = path.resolve(root, 'pkg')
 var dep = path.resolve(root, 'dep')
-var target = path.resolve(pkg, 'node_modules', 'dep')
+var target = path.resolve(pkg, 'unity_packages', 'dep')
 var cache = path.resolve(root, 'cache')
 var globalPath = path.resolve(root, 'global')
 
@@ -33,7 +33,7 @@ var myreg = require('http').createServer(function (q, s) {
 test('setup', function (t) {
   rimraf.sync(root)
   mkdirp.sync(root)
-  mkdirp.sync(path.resolve(pkg, 'node_modules'))
+  mkdirp.sync(path.resolve(pkg, 'unity_packages'))
   mkdirp.sync(dep)
   mkdirp.sync(cache)
   mkdirp.sync(globalPath)

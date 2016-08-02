@@ -15,7 +15,7 @@ var osenv = require('osenv')
 test('package.json sorting after install', function (t) {
   var packageJson = path.resolve(pkg, 'package.json')
   var installedPackage = path.resolve(workdir,
-    'node_modules/install-package-json-order/package.json')
+    'unity_packages/install-package-json-order/package.json')
 
   cleanup()
   mkdirp.sync(cache)

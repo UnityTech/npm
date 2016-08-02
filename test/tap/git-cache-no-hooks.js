@@ -14,7 +14,7 @@ test('setup', function (t) {
   mkdirp.sync(pkg)
   mkdirp.sync(cache)
   mkdirp.sync(tmp)
-  mkdirp.sync(path.resolve(pkg, 'node_modules'))
+  mkdirp.sync(path.resolve(pkg, 'unity_packages'))
   t.end()
 })
 

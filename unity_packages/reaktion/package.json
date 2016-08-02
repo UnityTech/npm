@@ -1,0 +1,76 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "reaktion",
+        "scope": null,
+        "escapedName": "reaktion",
+        "name": "reaktion",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/stella/code/npm-fork"
+    ]
+  ],
+  "_from": "reaktion@latest",
+  "_id": "reaktion@0.2.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/reaktion",
+  "_nodeVersion": "6.3.1",
+  "_npmUser": {},
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "reaktion",
+    "scope": null,
+    "escapedName": "reaktion",
+    "name": "reaktion",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "http://localhost:4873/reaktion/-/reaktion-0.2.0.tgz",
+  "_shasum": "fb1314d542d087ee46df5ce3dadb7ec081596431",
+  "_shrinkwrap": null,
+  "_spec": "reaktion",
+  "_where": "/Users/stella/code/npm-fork",
+  "author": {
+    "name": "Keijiro Takahashi"
+  },
+  "bugs": {
+    "url": "https://github.com/keijiro/Reaktion/issues"
+  },
+  "dependencies": {},
+  "description": "audio reactive toolkit for unity",
+  "devDependencies": {},
+  "dist": {
+    "shasum": "fb1314d542d087ee46df5ce3dadb7ec081596431",
+    "tarball": "http://localhost:4873/reaktion/-/reaktion-0.2.0.tgz"
+  },
+  "gitHead": "23184517abd6ce2ff32d3ecade30b01aeec2cd2d",
+  "homepage": "https://github.com/keijiro/Reaktion#readme",
+  "keywords": [
+    "audio",
+    "reactive",
+    "midi"
+  ],
+  "license": "MIT",
+  "main": "Reaktion.unitypackage",
+  "name": "reaktion",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keijiro/Reaktion.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.2.0"
+}

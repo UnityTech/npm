@@ -20,8 +20,8 @@ used to work with scoped and un-scoped registries at the same time.
 ## Installing scoped packages
 
 Scoped packages are installed to a sub-folder of the regular installation
-folder, e.g. if your other packages are installed in `node_modules/packagename`,
-scoped modules will be in `node_modules/@myorg/packagename`. The scope folder
+folder, e.g. if your other packages are installed in `unity_packages/packagename`,
+scoped modules will be in `unity_packages/@myorg/packagename`. The scope folder
 (`@myorg`) is simply the name of the scope preceded by an @-symbol, and can
 contain any number of scoped packages.
 

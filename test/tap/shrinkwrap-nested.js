@@ -95,7 +95,7 @@ var newShrinkwrap = new Tacks(Dir({
       }
     }
   }),
-  'node_modules': Dir({
+  'unity_packages': Dir({
     'modB@1': Dir({
       'package.json': File({
         _requested: {
@@ -140,7 +140,7 @@ test('incremental install', function (t) {
   common.npm(['install'], {cwd: testdir, stdio: [0, 2, 2]}, function (err, code) {
     if (err) throw err
     t.is(code, 0, 'npm itself completed ok')
-    fs.stat(path.join(testdir, 'node_modules', 'modC', 'node_modules', 'modB', 'B1'), function (missing) {
+    fs.stat(path.join(testdir, 'unity_packages', 'modC', 'unity_packages', 'modB', 'B1'), function (missing) {
       t.ok(!missing, 'modC got the updated version of modB')
       t.end()
     })

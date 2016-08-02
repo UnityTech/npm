@@ -7,15 +7,15 @@ var test = require('tap').test
 
 var common = require('../common-tap.js')
 var pkg = join(__dirname, 'dedupe-scoped')
-var modules = join(pkg, 'node_modules')
+var modules = join(pkg, 'unity_packages')
 
 var EXEC_OPTS = { cwd: pkg }
 
 var body = [
-  '@scope/shared@2.1.6 node_modules/first/node_modules/@scope/shared -> node_modules/@scope/shared',
-  'firstUnique@0.6.0 node_modules/first/node_modules/firstUnique -> node_modules/firstUnique',
-  'secondUnique@1.2.0 node_modules/second/node_modules/secondUnique -> node_modules/secondUnique',
-  '- @scope/shared@2.1.6 node_modules/second/node_modules/@scope/shared'
+  '@scope/shared@2.1.6 unity_packages/first/unity_packages/@scope/shared -> unity_packages/@scope/shared',
+  'firstUnique@0.6.0 unity_packages/first/unity_packages/firstUnique -> unity_packages/firstUnique',
+  'secondUnique@1.2.0 unity_packages/second/unity_packages/secondUnique -> unity_packages/secondUnique',
+  '- @scope/shared@2.1.6 unity_packages/second/unity_packages/@scope/shared'
 ]
 
 var deduper = {
@@ -109,15 +109,15 @@ function setup (cb) {
     JSON.stringify(first, null, 2)
   )
 
-  mkdirp.sync(join(modules, 'first', 'node_modules', 'firstUnique'))
+  mkdirp.sync(join(modules, 'first', 'unity_packages', 'firstUnique'))
   fs.writeFileSync(
-    join(modules, 'first', 'node_modules', 'firstUnique', 'package.json'),
+    join(modules, 'first', 'unity_packages', 'firstUnique', 'package.json'),
     JSON.stringify(firstUnique, null, 2)
   )
 
-  mkdirp.sync(join(modules, 'first', 'node_modules', '@scope', 'shared'))
+  mkdirp.sync(join(modules, 'first', 'unity_packages', '@scope', 'shared'))
   fs.writeFileSync(
-    join(modules, 'first', 'node_modules', '@scope', 'shared', 'package.json'),
+    join(modules, 'first', 'unity_packages', '@scope', 'shared', 'package.json'),
     JSON.stringify(shared, null, 2)
   )
 
@@ -127,15 +127,15 @@ function setup (cb) {
     JSON.stringify(second, null, 2)
   )
 
-  mkdirp.sync(join(modules, 'second', 'node_modules', 'secondUnique'))
+  mkdirp.sync(join(modules, 'second', 'unity_packages', 'secondUnique'))
   fs.writeFileSync(
-    join(modules, 'second', 'node_modules', 'secondUnique', 'package.json'),
+    join(modules, 'second', 'unity_packages', 'secondUnique', 'package.json'),
     JSON.stringify(secondUnique, null, 2)
   )
 
-  mkdirp.sync(join(modules, 'second', 'node_modules', '@scope', 'shared'))
+  mkdirp.sync(join(modules, 'second', 'unity_packages', '@scope', 'shared'))
   fs.writeFileSync(
-    join(modules, 'second', 'node_modules', '@scope', 'shared', 'package.json'),
+    join(modules, 'second', 'unity_packages', '@scope', 'shared', 'package.json'),
     JSON.stringify(shared, null, 2)
   )
 }

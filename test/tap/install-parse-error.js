@@ -15,7 +15,7 @@ var fixture = new Tacks(Dir({
       "'dependencies': {}\n" +
     '}'
   ),
-  'node_modules': Dir()
+  'unity_packages': Dir()
 }))
 
 function setup () {

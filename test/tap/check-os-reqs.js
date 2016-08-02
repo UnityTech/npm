@@ -53,11 +53,11 @@ function cleanup () {
 
 function setup () {
   cleanup()
-  mkdirp.sync(path.resolve(installFrom, 'node_modules'))
+  mkdirp.sync(path.resolve(installFrom, 'unity_packages'))
   fs.writeFileSync(
     path.join(installFrom, 'package.json'),
     JSON.stringify(json, null, 2)
   )
-  mkdirp.sync(path.resolve(installIn, 'node_modules'))
+  mkdirp.sync(path.resolve(installIn, 'unity_packages'))
   process.chdir(base)
 }

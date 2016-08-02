@@ -15,7 +15,7 @@ var pkg = path.resolve(__dirname, 'circular-dep')
 var minimist = path.join(pkg, 'minimist')
 
 var EXEC_OPTS = {
-  cwd: path.join(pkg, 'minimist/node_modules'),
+  cwd: path.join(pkg, 'minimist/unity_packages'),
   npm_config_cache: path.join(pkg, 'cache')
 }
 
@@ -61,11 +61,11 @@ test('installing a package that depends on the current package', function (t) {
 
           t.ok(existsSync(path.resolve(
             minimist,
-            'node_modules', 'optimist'
+            'unity_packages', 'optimist'
           )), 'optimist in place')
           t.ok(existsSync(path.resolve(
             minimist,
-            'node_modules', 'minimist'
+            'unity_packages', 'minimist'
           )), 'circular dependency uncircled')
           t.end()
         }
@@ -89,7 +89,7 @@ function setup (cb) {
   )
   process.chdir(path.resolve(pkg, 'minimist'))
 
-  fs.mkdirSync(path.resolve(pkg, 'minimist/node_modules'))
+  fs.mkdirSync(path.resolve(pkg, 'minimist/unity_packages'))
   mr({ port: common.port }, function (er, s) {
     server = s
     cb()

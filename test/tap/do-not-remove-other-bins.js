@@ -11,7 +11,7 @@ var common = require('../common-tap')
 
 var base = path.resolve(__dirname, path.basename(__filename, '.js'))
 var installPath = path.resolve(base, 'install')
-var installBin = path.resolve(installPath, 'node_modules', '.bin')
+var installBin = path.resolve(installPath, 'unity_packages', '.bin')
 var packageApath = path.resolve(base, 'packageA')
 var packageBpath = path.resolve(base, 'packageB')
 
@@ -42,7 +42,7 @@ var EXEC_OPTS = {
 
 test('setup', function (t) {
   cleanup()
-  mkdirp.sync(path.join(installPath, 'node_modules'))
+  mkdirp.sync(path.join(installPath, 'unity_packages'))
   mkdirp.sync(packageApath)
   fs.writeFileSync(
     path.join(packageApath, 'package.json'),
@@ -94,7 +94,7 @@ test('verify bins', function (t) {
     path.resolve(
       installBin,
       common.readBinLink(path.join(installBin, 'testbin'))))
-  t.is(bin, path.join(installPath, 'node_modules', 'b'))
+  t.is(bin, path.join(installPath, 'unity_packages', 'b'))
   t.end()
 })
 
@@ -115,7 +115,7 @@ test('verify postremoval bins', function (t) {
     path.resolve(
       installBin,
       common.readBinLink(path.join(installBin, 'testbin'))))
-  t.is(bin, path.join(installPath, 'node_modules', 'b'))
+  t.is(bin, path.join(installPath, 'unity_packages', 'b'))
   t.end()
 })
 

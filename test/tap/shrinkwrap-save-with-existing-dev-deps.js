@@ -14,7 +14,7 @@ var installme_pkg = path.join(installme, 'package.json')
 var example = path.join(base, 'example')
 var example_shrinkwrap = path.join(example, 'npm-shrinkwrap.json')
 var example_pkg = path.join(example, 'package.json')
-var installed = path.join(example, 'node_modules', 'installed')
+var installed = path.join(example, 'unity_packages', 'installed')
 var installed_pkg = path.join(installed, 'package.json')
 
 var EXEC_OPTS = { cwd: example }

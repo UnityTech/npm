@@ -103,7 +103,7 @@ executing the scripts.  So, if your package.json has this:
     , "scripts": { "start" : "bar ./test" } }
 
 then you could run `npm start` to execute the `bar` script, which is
-exported into the `node_modules/.bin` directory on `npm install`.
+exported into the `unity_packages/.bin` directory on `npm install`.
 
 ### package.json vars
 
@@ -194,7 +194,7 @@ file.
 If you want to run a specific script at a specific lifecycle event for
 ALL packages, then you can use a hook script.
 
-Place an executable file at `node_modules/.hooks/{eventname}`, and
+Place an executable file at `unity_packages/.hooks/{eventname}`, and
 it'll get run for all packages when they are going through that point
 in the package lifecycle for any packages installed in that root.
 

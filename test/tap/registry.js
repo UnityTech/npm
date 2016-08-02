@@ -6,7 +6,7 @@ var test = require('tap').test
 
 var npmExec = require.resolve('../../bin/npm-cli.js')
 var path = require('path')
-var ca = path.resolve(__dirname, '../../node_modules/npm-registry-couchapp')
+var ca = path.resolve(__dirname, '../../unity_packages/npm-registry-couchapp')
 
 var which = require('which')
 

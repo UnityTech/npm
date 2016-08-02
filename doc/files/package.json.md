@@ -201,7 +201,7 @@ Conversely, some files are always ignored:
 * `._*`
 * `npm-debug.log`
 * `.npmrc`
-* `node_modules`
+* `unity_packages`
 * `config.gypi`
 
 ## main
@@ -223,7 +223,7 @@ feature to install the "npm" executable.)
 
 To use this, supply a `bin` field in your package.json which is a map of
 command name to local file name. On install, npm will symlink that file into
-`prefix/bin` for global installs, or `./node_modules/.bin/` for local
+`prefix/bin` for global installs, or `./unity_packages/.bin/` for local
 installs.
 
 

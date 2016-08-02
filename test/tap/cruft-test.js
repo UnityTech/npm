@@ -7,7 +7,7 @@ var test = require('tap').test
 var common = require('../common-tap.js')
 
 var base = path.join(__dirname, path.basename(__filename, '.js'))
-var cruft = path.join(base, 'node_modules', 'cruuuft')
+var cruft = path.join(base, 'unity_packages', 'cruuuft')
 var pkg = {
   name: 'example',
   version: '1.0.0',

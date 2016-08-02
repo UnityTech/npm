@@ -8,7 +8,7 @@ var writeFileSync = require('fs').writeFileSync
 var common = require('../common-tap.js')
 
 var link = path.join(__dirname, 'rmlinked')
-var linkDep = path.join(link, 'node_modules', 'baz')
+var linkDep = path.join(link, 'unity_packages', 'baz')
 var linkInstall = path.join(__dirname, 'rmlinked-install')
 var linkRoot = path.join(__dirname, 'rmlinked-root')
 

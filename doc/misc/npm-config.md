@@ -378,7 +378,7 @@ Operates in "global" mode, so that packages are installed into the
 `prefix` folder instead of the current working directory.  See
 `npm-folders(5)` for more on the differences in behavior.
 
-* packages are installed into the `{prefix}/lib/node_modules` folder, instead of the
+* packages are installed into the `{prefix}/lib/unity_packages` folder, instead of the
   current working directory.
 * bin files are linked to `{prefix}/bin`
 * man pages are linked to `{prefix}/share/man`
@@ -395,10 +395,10 @@ The config file to read for global config options.
 * Default: false
 * Type: Boolean
 
-Causes npm to install the package into your local `node_modules` folder with
-the same layout it uses with the global `node_modules` folder.  Only your
-direct dependencies will show in `node_modules` and everything they depend
-on will be flattened in their `node_modules` folders.  This obviously will
+Causes npm to install the package into your local `unity_packages` folder with
+the same layout it uses with the global `unity_packages` folder.  Only your
+direct dependencies will show in `unity_packages` and everything they depend
+on will be flattened in their `unity_packages` folders.  This obviously will
 eliminate some deduping. If used with `legacy-bundling`, `legacy-bundling` will be
 preferred.
 

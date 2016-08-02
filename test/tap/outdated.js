@@ -41,17 +41,17 @@ test('setup', function (t) {
 test('it should not throw', function (t) {
   var output = []
   var expOut = [
-    path.resolve(pkg, 'node_modules', 'async') +
+    path.resolve(pkg, 'unity_packages', 'async') +
       ':async@0.2.9' +
       ':async@0.2.9' +
       ':async@0.2.10' +
       '\n' +
-    path.resolve(pkg, 'node_modules', 'checker') +
+    path.resolve(pkg, 'unity_packages', 'checker') +
       ':checker@0.5.1' +
       ':checker@0.5.1' +
       ':checker@0.5.2' +
       '\n' +
-    path.resolve(pkg, 'node_modules', 'underscore') +
+    path.resolve(pkg, 'unity_packages', 'underscore') +
       ':underscore@1.3.1' +
       ':underscore@1.3.1' +
       ':underscore@1.5.1'

@@ -12,7 +12,7 @@ var common = require('../common-tap.js')
 
 var pkg = path.resolve(__dirname, 'peer-deps-without-package-json')
 var cache = path.resolve(pkg, 'cache')
-var nodeModules = path.resolve(pkg, 'node_modules')
+var nodeModules = path.resolve(pkg, 'unity_packages')
 
 var fileJS = function () {
 /**package

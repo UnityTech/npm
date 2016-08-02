@@ -38,7 +38,7 @@ var fixture = new Tacks(
     })
   })
 )
-var installed = path.join(testdir, 'node_modules', 'underscore', 'package.json')
+var installed = path.join(testdir, 'unity_packages', 'underscore', 'package.json')
 
 function setup () {
   fixture.create(testdir)
@@ -77,7 +77,7 @@ test('shrinkwrap-default-arg-version', function (t) {
     t.comment(stdout.trim())
     t.comment(stderr.trim())
     t.is(code, 0, 'installed ok')
-    t.ok(exists(path.join(testdir, 'node_modules', 'underscore')), 'underscore installed')
+    t.ok(exists(path.join(testdir, 'unity_packages', 'underscore')), 'underscore installed')
     var pjson = JSON.parse(fs.readFileSync(installed))
     t.is(pjson.version, '1.3.1', 'got shrinkwrap version')
     t.end()
@@ -90,7 +90,7 @@ test('can-override', function (t) {
     t.comment(stdout.trim())
     t.comment(stderr.trim())
     t.is(code, 0, 'installed ok')
-    t.ok(exists(path.join(testdir, 'node_modules', 'underscore')), 'underscore installed')
+    t.ok(exists(path.join(testdir, 'unity_packages', 'underscore')), 'underscore installed')
     var pjson = JSON.parse(fs.readFileSync(installed))
     t.is(pjson.version, '1.5.1', 'got latest version')
     t.end()

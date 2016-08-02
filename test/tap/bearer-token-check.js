@@ -12,7 +12,7 @@ var toNerfDart = require('../../lib/config/nerf-dart.js')
 
 var pkg = resolve(__dirname, 'install-bearer-check')
 var outfile = resolve(pkg, '_npmrc')
-var modules = resolve(pkg, 'node_modules')
+var modules = resolve(pkg, 'unity_packages')
 var tarballPath = '/scoped-underscore/-/scoped-underscore-1.3.1.tgz'
 // needs to be a different hostname to verify tokens (not) being sent correctly
 var tarballURL = 'http://lvh.me:' + common.port + tarballPath

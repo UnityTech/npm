@@ -18,7 +18,7 @@ var fixture = new Tacks(
         version: '1.0.0'
       })
     }),
-    node_modules: Dir({
+    unity_packages: Dir({
     })
   })
 )
@@ -54,7 +54,7 @@ test('local-args-relative-to-cwd', function (t) {
     t.comment(stdout.trim())
     t.comment(stderr.trim())
     t.is(code, 0, 'install ran ok')
-    t.ok(exists(path.join(testdir, 'node_modules', 'mod1')), 'mod1 installed')
+    t.ok(exists(path.join(testdir, 'unity_packages', 'mod1')), 'mod1 installed')
     t.end()
   })
 })

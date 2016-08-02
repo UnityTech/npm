@@ -57,7 +57,7 @@ test('cleanup', function (t) {
 function bootstrap () {
   cleanup()
   mkdirp.sync(dir)
-  mkdirp.sync(path.join(dir, 'node_modules'))
+  mkdirp.sync(path.join(dir, 'unity_packages'))
 
   mkdirp.sync(pkg)
   fs.writeFileSync(path.resolve(pkg, 'package.json'), pj)

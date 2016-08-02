@@ -59,7 +59,7 @@ function cleanup () {
 
 function setup () {
   cleanup()
-  mkdirp.sync(path.resolve(pkg, 'node_modules'))
+  mkdirp.sync(path.resolve(pkg, 'unity_packages'))
   fs.writeFileSync(
     path.join(pkg, 'package.json'),
     JSON.stringify(PACKAGE_JSON1, null, 2)

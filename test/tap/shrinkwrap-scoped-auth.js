@@ -12,7 +12,7 @@ var toNerfDart = require('../../lib/config/nerf-dart.js')
 
 var pkg = resolve(__dirname, 'shrinkwrap-scoped-auth')
 var outfile = resolve(pkg, '_npmrc')
-var modules = resolve(pkg, 'node_modules')
+var modules = resolve(pkg, 'unity_packages')
 var tarballPath = '/scoped-underscore/-/scoped-underscore-1.3.1.tgz'
 var tarballURL = common.registry + tarballPath
 var tarball = resolve(__dirname, '../fixtures/scoped-underscore-1.3.1.tgz')
