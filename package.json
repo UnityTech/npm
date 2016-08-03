@@ -5,7 +5,7 @@
   "keywords": [
     "upm",
     "packages",
-    "package manager",
+    "package manager"
   ],
   "preferGlobal": true,
   "config": {
